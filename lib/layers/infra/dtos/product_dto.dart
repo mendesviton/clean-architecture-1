@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import '../../domain/entities/product_entity.dart';
@@ -7,18 +8,21 @@ import '../../domain/entities/product_entity.dart';
 //converte de json para objeto
 
 class ProductDto extends ProductEntity {
+  final int idProduct;
   final String nameProduct;
   final double priceProduct;
   final int quantityProduct;
   final String brandProduct;
   final String categoryProduct;
   ProductDto({
+    required this.idProduct,
     required this.nameProduct,
     required this.priceProduct,
     required this.quantityProduct,
     required this.brandProduct,
     required this.categoryProduct,
   }) : super(
+            id: idProduct,
             name: nameProduct,
             brand: brandProduct,
             category: categoryProduct,
@@ -44,6 +48,7 @@ class ProductDto extends ProductEntity {
       quantityProduct: map['quantityProduct']?.toInt() ?? 0,
       brandProduct: map['brandProduct'] ?? '',
       categoryProduct: map['categoryProduct'] ?? '',
+      idProduct: map['idProduct'] ?? '',
     );
   }
 

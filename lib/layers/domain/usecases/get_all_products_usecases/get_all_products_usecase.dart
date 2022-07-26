@@ -1,4 +1,4 @@
-import '../entities/product_entity.dart';
+import '../../entities/product_entity.dart';
 
 //contrato do caso de uso para trazer todos os produtos
 
